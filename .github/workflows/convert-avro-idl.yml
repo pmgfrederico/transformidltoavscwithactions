@@ -24,7 +24,7 @@ jobs:
 
     - name: Install Avro Tools
       run: |
-        wget https://repo1.maven.org/maven2/org/apache/avro/avro-tools/1.10.0/avro-tools-1.10.0.jar -0 avro-tools.jar
+        wget https://repo1.maven.org/maven2/org/apache/avro/avro-tools/1.10.0/avro-tools-1.10.0.jar avro-tools.jar
 
     - name: Convert Avro IDL to Avro Schema
       run: |
