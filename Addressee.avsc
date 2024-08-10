@@ -1,0 +1,34 @@
+{
+  "type" : "record",
+  "name" : "Addressee",
+  "namespace" : "mbag.dh.io.foc.ocp.v2",
+  "fields" : [ {
+    "name" : "firstName",
+    "type" : "string",
+    "default" : "Max"
+  }, {
+    "name" : "firstName2",
+    "type" : "string",
+    "default" : "Joseph"
+  }, {
+    "name" : "lastName",
+    "type" : "string",
+    "default" : "Mustermann"
+  }, {
+    "name" : "lastName2",
+    "type" : "string",
+    "default" : "Thompson"
+  }, {
+    "name" : "middleName",
+    "type" : "string",
+    "default" : "Alexander"
+  }, {
+    "name" : "salutation",
+    "type" : "string",
+    "default" : "slt_mr"
+  }, {
+    "name" : "title",
+    "type" : "string",
+    "default" : "Mr."
+  } ]
+}
