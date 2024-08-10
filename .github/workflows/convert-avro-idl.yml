@@ -28,10 +28,11 @@ jobs:
     - name: Install Avro Tools
       run: |
         wget https://repo1.maven.org/maven2/org/apache/avro/avro-tools/1.11.3/avro-tools-1.11.3.jar
-
+        
     - name: Convert Avro IDL to Avro Schema
       run: |
         find . -name "*.avdl" -exec sh -c 'java -jar avro-tools-1.11.3.jar idl2schemata {} $(dirname {})' \;
+        rm avro-tools-1.11.3.jar
 
     - name: Commit and push changes
       run: |        
