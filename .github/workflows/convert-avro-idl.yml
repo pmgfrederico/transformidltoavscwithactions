@@ -8,6 +8,9 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write
+
 jobs:
   convert-avro-idl:
     runs-on: ubuntu-latest
