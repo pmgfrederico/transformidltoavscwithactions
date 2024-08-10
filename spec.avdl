@@ -1,55 +1,5 @@
 protocol OcpVNext {
-    @namespace("mbag.dh.io.foc.ocp.v2")
-    record InvoiceInfo {
-        union { Person, Company } customer;
-        PostalAddress postalAddress;
-        union { null, InvoiceSettings } invoiceSettings;
-    }
-
-    @namespace("mbag.dh.io.foc.ocp.v2")
-    record InvoiceSettings {
-        DeliveryChannelPreferences deliveryChannelPreferences;
-    }
-
-    record DeliveryChannelPreferences {
-        union { TwDeliveryChannelPreferences } customer;
-    }
-
-    @namespace("mbag.dh.io.foc.ocp.v2")
-    record Person {
-
-    }
-
-    @namespace("mbag.dh.io.foc.ocp.v2")
-    record Company {}
     
-    @namespace("mbag.dh.io.foc.ocp.v2")
-    record PostalAddress {
-        Addressee addressee;
-        // map<string> additionalAddressInfo = { "key": "value" };
-        array<string> additionalStreetInfo = ["1600 Pennsylvania Avenue NW", "Washington, DC 20500", "USA"];
-        // string addressLine1 = "1600 Pennsylvania Avenue NW";
-        // string addressLine2 = "Washington, DC 20500";
-        // string addressLine3 = "USA";
-        string apartment = "17";
-        string building = "Building 2";
-        string city = "Stuttgart";
-        string companyName = "mercedes-benz";
-        string country = "DE";
-        string district = "Praça da República";
-        string houseName = "house";        
-        string poBox = "P.O. Box 123";
-        string postalCode = "70180";
-        string province = "Genoa(e.g. province in Italy)";
-        string region = "lis";
-        string state = "TX(e.g. Texas is state in the USA)";
-        string streetName = "road";
-        string streetNumber = "1";
-        string streetType = "road";
-        // string suburb = "Box Hill";
-        string subDistrict = "Praça da República";
-    }
-
     @namespace("mbag.dh.io.foc.ocp.v2")
     record Addressee {
         // string additionalName = "Alexander";
@@ -59,6 +9,6 @@ protocol OcpVNext {
         string lastName2 = "Thompson";
         string middleName = "Alexander";
         string salutation = "slt_mr";
-        string title = "Mr.";        
+        string title = "Mr.";
     }
 }
