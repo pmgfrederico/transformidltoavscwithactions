@@ -35,6 +35,7 @@ jobs:
         git config user.name 'Pedro Frederico'
         git config user.email 'pmgfrederico@gmail.com'
         git add .
-        git commit -m 'Convert Avro IDL to Avro Schema'        
+        git commit -m 'Convert Avro IDL to Avro Schema'
+        git push        
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}~"
