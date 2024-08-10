@@ -28,7 +28,7 @@ jobs:
 
     - name: Convert Avro IDL to Avro Schema
       run: |
-        find . -name "*.avdl" -exec sh -c 'java -jar avro-tools-1.13.0.jar idl2schemata {} $(dirname {})' \;
+        find . -name "*.avdl" -exec sh -c 'java -jar avro-tools-1.11.3.jar idl2schemata {} $(dirname {})' \;
 
     - name: Commit and push changes
       run: |        
