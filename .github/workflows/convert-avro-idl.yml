@@ -1,0 +1,38 @@
+name: Convert Avro IDL to Avro Schema
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  convert-avro-idl:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Java
+      uses: actions/setup-java@v2
+      with:
+        distribution: 'adopt'
+        java-version: '11'
+
+    - name: Install Avro Tools
+      run: |
+        wget http://apache.mirrors.tds.net/avro/avro-1.10.2/java/avro-tools-1.10.2.jar -O avro-tools.jar
+
+    - name: Convert Avro IDL to Avro Schema
+      run: |
+        find . -name "*.avdl" -exec sh -c 'java -jar avro-tools.jar idl2schemata {} $(dirname {})' \;
+
+    - name: Commit and push changes
+      run: |        
+        git add .
+        git commit -m 'Convert Avro IDL to Avro Schema'        
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}~"
